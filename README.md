@@ -17,11 +17,13 @@ ___
 
 ## Solution 
 
+WHEN the submit button is clicked
+
 ### INPUT
 
-   WHEN the submit button is clicked
-       - [ ] Define the number of km from the input in html.
-       - [ ] Define the age from the input in html.
+   - [ ] Define the passenger name from the input in html.
+   - [ ] Define the number of km from the input in html.
+   - [ ] Define the age from the input in html.
 
 
 ### LOGICAL EXECUTION
