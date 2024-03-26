@@ -21,7 +21,107 @@
 
 <body>
 
-    <h1></h1>
+    <h1>Train Ticket Discount Calculator</h1>
+
+    <!-- Calculator Form Section-->
+    <section>
+
+        <h2>Calculate the price of your ticket</h2>
+
+        <form>
+
+            <!-- Name Input-->
+            <div>
+
+                <label for="userName">Name & Surname</label>
+
+                <input type="text" id="userName">
+
+            </div>
+            <!-- /Name Input-->
+
+            <!-- Km Input-->
+            <div>
+
+                <label for="userKm">Km of the trip</label>
+
+                <input type="text" id="userKm">
+
+            </div>
+            <!-- /Km Input-->
+
+            <!-- Age Input-->
+            <div>
+
+                <label for="userAge">Age</label>
+
+                <input type="text" id="userAge">
+
+            </div>
+            <!-- /Age Input-->
+
+            <!-- Form Buttons-->
+            <div>
+
+                <button class="submitCalc">Submit</button>
+
+                <button class="cancelForm">Cancel</button>
+
+            </div>
+            <!-- /Form Buttons-->
+
+        </form>
+
+    </section>
+    <!-- /Calculator Form Section-->
+
+    <!-- Display Ticket Section-->
+    <section>
+
+        <h2>Your ticket</h2>
+
+        <div>
+
+            <h3></h3>
+
+            <div>
+
+                <h4>PASSENGER NAME</h4>
+
+                <p id="passengerName"></p>
+
+            </div>
+
+            <table>
+
+                <thead>
+                    <tr>
+
+                        <th>Offer</th>
+                        <th>Car</th>
+                        <th>CP Code</th>
+                        <th>Ticket Price</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+
+                        <td id="ticketOffer"></td>
+                        <td>5</td>
+                        <td id="cpCode"></td>
+                        <td id="ticketPrice"></td>
+
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+    <!-- /Display Ticket Section-->
 
     <script src="./js/script.js"></script>
 
