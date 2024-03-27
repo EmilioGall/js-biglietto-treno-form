@@ -1,8 +1,12 @@
-// 1. Define Submit Button constant
+// 1. Define Submit&Cancel Button constant
 
 const submitBtn = document.getElementById("submit-btn"); // object | null
 
 console.log(submitBtn, typeof submitBtn);
+
+const cancelBtn = document.getElementById("cancel-btn"); // object | null
+
+console.log(cancelBtn, typeof cancelBtn);
 
 // 2. Add Event listener to the Button
 
@@ -35,16 +39,14 @@ submitBtn.addEventListener("click", function() {
 
     console.log(inputAge, typeof inputAge); // ShowInConsole kmInput & TypeOfData
 
-    let Age = inputAge.value; // string
-
-    let userAge = parseInt(Age); // number
+    let userAge = inputAge.value; // string
 
     console.log(userAge, typeof userAge); // ShowInConsole ageInput & TypeOfData
 
 
     // PROGRAM EXECUTION
   
-    if (isNaN(userKm) === false && isNaN(userAge) === false && userKm > 0 && userAge > 0) {
+    if (!isNaN(userKm) && userKm > 0) {
 
         // Entire price calculator
     
@@ -56,17 +58,27 @@ submitBtn.addEventListener("click", function() {
     
         let discount = 0;
     
-        if ((userAge < 18) && (userAge > 12)) { // Boolean
+        if (userAge === "Under18") { // Boolean
     
             discount = 20; // Number
     
-        } else if (userAge > 65) { // Boolean
+            document.getElementById("ticketOffer").innerHTML = `Ticket Discount Under18 - ${discount}%`;
+
+        } else if (userAge === "Over65") { // Boolean
     
             discount = 40; // Number
+
+            document.getElementById("ticketOffer").innerHTML = `Ticket Discount Over65 - ${discount}%`;
+
+        } else if (userAge === "Adult") { // Boolean
     
-        } else if (userAge < 12) { // Boolean
+            discount = 0; // Number
+
+            document.getElementById("ticketOffer").innerHTML = ("Standard Ticket");
+
+        } else if (userAge === "None") { // Boolean
     
-            alert("You are too young to purchase a ticket, please ask your parents for support."); // String
+            alert("Wrong data input!"); // String
     
         };
     
@@ -80,29 +92,41 @@ submitBtn.addEventListener("click", function() {
     
         console.log("final price", finalPrice, typeof finalPrice); // ShowInConsole finalPrice
     
-        // PRICE OUTPUT
-    
+        // TICKET OUTPUT
+
+        // Generate Car
+
+        const car = Math.floor(Math.random() * 12) + 1; // number
+
+        console.log(car); // number
+
+        // Generate Code
+
+        const cpCode = Math.floor(Math.random() * (99999 - 11111)) + 11111; // number
+
+        console.log(cpCode);
+
+        // Ticket reveal
+
+        document.getElementById("ticket").classList.remove("hidden");
+
+        // Print info
+
+        document.getElementById("ticketName").innerHTML = userName;
+
+        document.getElementById("ticketCar").innerHTML = car;
+        
+        document.getElementById("ticketCode").innerHTML = cpCode;
+
         // Price approximation
 
-        if (discount === 20) { // Boolean
-    
-            document.getElementById("ticketOffer").innerHTML = ("Ticket Discount Under18");
-    
-        } else if (discount === 40) { // Boolean
-    
-            document.getElementById("ticketOffer").innerHTML = ("Ticket Discount Over65");
-    
-        } else {
-    
-            document.getElementById("ticketOffer").innerHTML = ("Standard Ticket");
-    
-        };
-    
         let lastPrice = finalPrice.toFixed(2); // Approximation of finalPrice
-    
+
         console.log(lastPrice, typeof lastPrice); // ShowInConsole lastPrice
-    
-        document.getElementById("ticketPrice").innerHTML = lastPrice; // Print lastPrice
+
+        // Print Price
+        
+        document.getElementById("ticketPrice").innerHTML = `${lastPrice} &euro;`; // Print lastPrice
     
     } else {
     
@@ -110,6 +134,35 @@ submitBtn.addEventListener("click", function() {
     
     };
 
-
-
 });
+
+if (cancelBtn != null) {
+
+    cancelBtn.addEventListener("click", function () {
+
+      // Clean Input
+
+      document.getElementById("userName").value = "";
+
+      document.getElementById("userKm").value = "";
+
+      document.getElementById("userAge").value = "";
+  
+      // Clean Ticket
+
+      document.getElementById("ticketName").innerHTML = "";
+
+      document.getElementById("ticketOffer").innerHTML = "";
+
+      document.getElementById("ticketCar").innerHTML = "";
+      
+      document.getElementById("ticketCode").innerHTML = "";
+
+      document.getElementById("ticketPrice").innerHTML = "";
+
+      // Hide Ticket
+
+      document.getElementById("ticket").classList.add("hidden");
+
+    });
+};
