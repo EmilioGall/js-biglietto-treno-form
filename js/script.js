@@ -67,7 +67,6 @@ submitBtn.addEventListener("click", function() {
         } else if (userAge < 12) { // Boolean
     
             alert("You are too young to purchase a ticket, please ask your parents for support."); // String
-            document.getElementById("price").innerHTML = ("Not allowed");
     
         };
     
@@ -84,6 +83,20 @@ submitBtn.addEventListener("click", function() {
         // PRICE OUTPUT
     
         // Price approximation
+
+        if (discount === 20) { // Boolean
+    
+            document.getElementById("ticketOffer").innerHTML = ("Ticket Discount Under18");
+    
+        } else if (discount === 40) { // Boolean
+    
+            document.getElementById("ticketOffer").innerHTML = ("Ticket Discount Over65");
+    
+        } else {
+    
+            document.getElementById("ticketOffer").innerHTML = ("Standard Ticket");
+    
+        };
     
         let lastPrice = finalPrice.toFixed(2); // Approximation of finalPrice
     
@@ -95,6 +108,8 @@ submitBtn.addEventListener("click", function() {
     
         alert("Wrong data input!"); // String
     
-    }
+    };
+
+
 
 });

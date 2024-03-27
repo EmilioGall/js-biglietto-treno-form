@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -19,98 +20,89 @@
 
 </head>
 
-<body>
+<body class="bg-dark-subtle p-5">
 
-    <h1>Train Ticket Discount Calculator</h1>
+    <h1 class="fs-1 text-primary text-center fw-bold mb-3">Train Ticket Discount Calculator</h1>
 
     <!-- Calculator Form Section-->
-    <section>
+    <section class="ticket-calculator container-md text-center p-4 border border-5 border-primary rounded bg-primary-subtle my-5">
 
-        <h2>Calculate the price of your ticket</h2>
+        <h2 class="fs-2 text-primary fw-bold">Calculate the price of your ticket</h2>
 
-        <form>
+        <div class="row py-3">
 
             <!-- Name Input-->
-            <div>
+            <div class="col-4 d-flex flex-column">
 
-                <label for="userName">Name & Surname</label>
+                <label for="userName" class="form-label fs-5 fw-bold">Name & Surname</label>
 
-                <input type="text" id="userName">
+                <input type="text" class="form-control" id="userName"> 
 
             </div>
             <!-- /Name Input-->
 
             <!-- Km Input-->
-            <div>
+            <div class="col-4 d-flex flex-column">
 
-                <label for="userKm">Km of the trip</label>
+                <label for="userKm" class="form-label fs-5 fw-bold">Km of the trip</label>
 
-                <input type="text" id="userKm">
+                <input type="number" class="form-control" id="userKm">
 
             </div>
             <!-- /Km Input-->
 
             <!-- Age Input-->
-            <div>
+            <div class="col-4 d-flex flex-column">
 
-                <label for="userAge">Age</label>
+                <label for="userAge" class="form-label fs-5 fw-bold">Age</label>
 
-                <input type="text" id="userAge">
+                <input type="number" class="form-control" id="userAge">
 
             </div>
             <!-- /Age Input-->
 
-            <!-- Form Buttons-->
-            <div>
+        </div>
 
-                <button id="submit-btn">Submit</button>
+        <!-- Form Buttons-->
+        <div class="my-3">
 
-                <button id="cancelForm">Cancel</button>
+            <button class="btn btn-primary" id="submit-btn">Submit</button>
 
-            </div>
-            <!-- /Form Buttons-->
+            <button class="btn btn-primary" id="cancelForm">Cancel</button>
 
-        </form>
+        </div>
+        <!-- /Form Buttons-->
 
     </section>
     <!-- /Calculator Form Section-->
 
     <!-- Display Ticket Section-->
-    <section>
+    <section class="ticket container-md p-4 border border-5 border-primary rounded bg-primary-subtle my-5 hidden">
 
-        <h2>Your ticket</h2>
+        <h2 class="fs-2 text-primary fw-bold">Your ticket</h2>
 
-        <div>
+        <div class="row">           
 
-            <h3></h3>
-
-            <div>
-
-                <h4>PASSENGER NAME</h4>
-
-                <p id="passengerName"></p>
-
-            </div>
-
-            <table>
+            <table class="table border border-3 border-primary">
 
                 <thead>
                     <tr>
 
-                        <th>Offer</th>
-                        <th>Car</th>
-                        <th>CP Code</th>
-                        <th>Ticket Price</th>
+                        <th class="bg-body-secondary" scope="col">PASSENGER NAME</th>
+                        <th scope="col">Offer</th>
+                        <th scope="col">Car</th>
+                        <th scope="col">CP Code</th>
+                        <th scope="col">Ticket Price</th>
 
                     </tr>
                 </thead>
 
                 <tbody>
                     <tr>
-
+                        <td class="bg-body-secondary" id="ticketName" scope="col"></td>
                         <td id="ticketOffer"></td>
-                        <td>5</td>
-                        <td id="cpCode"></td>
+                        <td id="ticketCar"></td>
+                        <td id="ticketCode"></td>
                         <td id="ticketPrice"></td>
 
                     </tr>
